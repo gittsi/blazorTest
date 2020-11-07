@@ -9,11 +9,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:    # uses GitHub's checkout action to checkout code form the master branch
     - uses: actions/checkout@v2
-          # sets up .NET Core SDK 3.1
-    - name: Setup .NET Core SDK
-      uses: actions/setup-dotnet@v1.6.0
+          # sets up .NET 5
+    - name: setup .net core 5.0.100-preview.8.20417.9
+      uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 5.0
+        dotnet-version: 5.0.100-preview.8.20417.9
     # publishes Blazor project to the release-folder
     - name: Publish .NET Core Project
       run: dotnet publish src/BlazorAPP/BlazorAPP/BlazorAPP.csproj -c Release -o release --nologo
