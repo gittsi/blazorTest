@@ -5,3 +5,6 @@
 /.vs/slnx.sqlite
 /.vs
 /src/BlazorApp1/BlazorApp1/obj
+/src/BlazorApp1/BlazorApp1/Properties/PublishProfiles/FolderProfile.pubxml.user
+/src/BlazorApp1/BlazorApp1/Properties/PublishProfiles/FolderProfile.pubxml
+/src/BlazorApp1/BlazorApp1/BlazorApp1.csproj.user
