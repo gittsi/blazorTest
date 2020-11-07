@@ -16,7 +16,7 @@ jobs:
         dotnet-version: 5.0
     # publishes Blazor project to the release-folder
     - name: Publish .NET Core Project
-      run: dotnet publish BlazorAPP.csproj -c Release -o release --nologo
+      run: dotnet publish src/BlazorAPP/BlazorAPP.csproj -c Release -o release --nologo
    - name: Commit wwwroot to GitHub Pages
       uses: gittsi/github-pages-deploy-action@3.5.9
       with:
