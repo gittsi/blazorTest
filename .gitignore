@@ -11,3 +11,6 @@
 /src/BlazorAPP/BlazorAPP/bin/Debug/net5.0
 /release
 /src/BlazorAPP/BlazorAPP/bin/Release/net5.0
+/src/BlazorAPP/.vs/BlazorAPP/config
+/src/BlazorAPP/.vs/BlazorAPP/DesignTimeBuild/.dtbcache.v2
+/.suo

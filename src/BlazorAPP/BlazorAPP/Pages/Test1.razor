@@ -1,0 +1,98 @@
+﻿@page "/test1"
+    
+
+
+    <h1>Counter</h1>
+
+    <p>Current count: @currentCount</p>
+
+    
+    @*<InputText  @bind-Value=@myDatacs.TheNumber @oninput="@((e) => { myDatacs.TheNumber=(string)e.Value;})"></InputText>*@
+@*<input @bind ="myinput" />*@
+
+    
+
+    
+<!--<EditForm Model="@myDatacs" OnValidSubmit="@(e => AddMe(myinput))">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <InputText id="name" @bind-Value="myDatacs.TheNumber" />-->
+
+    @*<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+    <button class="btn btn-primary" @onclick="(()=> AddMe(myinput))">Click me2</button>
+    <button @onclick="@(e => AddMe(myinput))">Check2 </button>*@
+<!--</EditForm>-->
+
+
+<EditForm Model="@myDatacs" OnValidSubmit="@AddMe">
+    <div class="row content">
+        <div class="col-md-2"><label for="Name">Name</label></div>
+        <div class="col-md-3"><InputNumber id="name" @bind-Value="myDatacs.TheNumber" /></div>        
+    </div>
+    <div class="row content">
+        <div class="col-md-3 text-right">
+            <ValidationMessage For="@(() => myDatacs.TheNumber)" />
+            </div>
+        </div>
+
+
+        @*<div class="form-group row mb-1">
+            <label class="col-sm-3 col-form-label" for="NewName">Name</label>
+            <div class="col-sm-9">
+                <InputNumber id="myId" @bind-Value="myDatacs.TheNumber" />
+            </div>
+            <ValidationMessage For="@(() => myDatacs.TheNumber)" />
+        </div>*@
+
+        <div class="row content">
+            <button type="submit" ref="createButton" id="BtnRegister" class="btn btn-primary">Register</button>
+
+        </div>
+
+
+        <DataAnnotationsValidator />
+        @*<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+        <button class="btn btn-primary" @onclick="(()=> AddMe(myinput))">Click me2</button>
+        <button @onclick="@(e => AddMe(myinput))">Check2 </button>*@
+        <ValidationSummary />
+</EditForm>
+
+ 
+    @code {
+
+        private BlazorAPP.Model.MyDatacs myDatacs { get; set; } = new Model.MyDatacs();
+
+
+        protected string myinput { get; set; }
+
+        private int currentCount = 0;
+
+        private void IncrementCount()
+        {
+            currentCount++;
+        }
+
+        //private void AddMe(string a)
+        //{
+        //    var tryGetInt = int.TryParse(a, out int value);
+
+        //    if (tryGetInt)
+        //    {
+        //        currentCount = currentCount + value;
+        //    }
+        //    else
+        //    {
+
+        //    }
+
+        //}
+
+        private void AddMe()
+        {
+            currentCount = currentCount + myDatacs.TheNumber;
+
+
+
+        }
+    }
